@@ -23,16 +23,14 @@ namespace complex
             return res;
         }
 
+      
         public static Complex operator +(Complex c1, Complex c2)
         {
-            Complex res = new Complex();
-        }
-        public static Complex operator +(Complex c1, Complex c2)
-        {
-            Complex res = new Complex(c1.a + c2.a, c1.b + c2.b)
+            Complex res = new Complex(c1.a + c2.a, c1.b + c2.b);
             res.Simplify();
             return res;
-        }
+            }
+         
         public void Simplify()
         {
             int _a = this.a;
@@ -50,8 +48,18 @@ namespace complex
         }
         public override string ToString()
         {
+           
             return a + "/" + b;
         }
     }
-}
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Complex kek = new Complex();
+            Console.WriteLine(kek);
+            Console.ReadKey();
+        }
+    }
 
+}

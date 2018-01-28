@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4C0F6FBC-3B94-4177-831A-73BCBC7EE649}</ProjectGuid>
+    <ProjectGuid>{B4BFB64C-427D-4CD2-8C10-414B2FD4FA82}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>fileDirectory</RootNamespace>
-    <AssemblyName>fileDirectory</AssemblyName>
+    <RootNamespace>lessPrime</RootNamespace>
+    <AssemblyName>lessPrime</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

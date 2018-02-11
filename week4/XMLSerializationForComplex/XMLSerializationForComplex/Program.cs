@@ -14,7 +14,7 @@ namespace XMLSerializationForComplex
         static void Xmls()
         {
             XmlSerializer xs = new XmlSerializer(typeof(Complex));
-            FileStream fs = new FileStream("data.xml", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+            FileStream fs = new FileStream("dat.xml", FileMode.OpenOrCreate, FileAccess.ReadWrite);
 
             string line = Console.ReadLine();
             string[] s = line.Split(' ');

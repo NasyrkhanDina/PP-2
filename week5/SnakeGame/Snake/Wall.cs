@@ -16,16 +16,18 @@ namespace Snake
         public void Level(int level)
         {
             StreamReader sr = new StreamReader(@"C:\Users\Compag\Desktop\PP-2\week5\SnakeGame\Snake\level" + level + ".txt");
-            int n = int.Parse(Console.ReadLine());
-            for(int i = 0; i < n; i++)
+            int n = int.Parse(sr.ReadLine());
+            for (int i = 0; i < n; i++)
             {
-                string s = Console.ReadLine();
-                for(int j = 0; j < s.Length; j++)
+                string s = sr.ReadLine();
+                for (int j = 0; j < s.Length; j++)
                 {
                     if (s[j] == '*')
                         body.Add(new Point(j, i));
                 }
             }
+            //Console.Clear();
+            //Draw();
             sr.Close();
         }
         public Wall(int level)
@@ -35,13 +37,14 @@ namespace Snake
             color = ConsoleColor.Magenta;
             Level(level);
         }
-        public void Draw()
+        public void WallDraw()
         {
             Console.ForegroundColor = color;
-            foreach(Point p in body)
+            foreach (Point p in body)
             {
                 Console.SetCursorPosition(p.x, p.y);
                 Console.Write(sign);
             }
         }
+    }
 }

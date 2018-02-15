@@ -11,8 +11,8 @@ namespace Snake
         public int x, y;
         public Point(int _x, int _y)
         {
-            this.x = _x;
-            this.y = _y;
+           x = _x;
+           y = _y;
         }
     }
 }

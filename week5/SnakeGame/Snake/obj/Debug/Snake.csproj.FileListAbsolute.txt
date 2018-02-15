@@ -1,0 +1,7 @@
+C:\Users\Compag\Desktop\PP-2\week5\SnakeGame\Snake\obj\Debug\Snake.csprojResolveAssemblyReference.cache
+C:\Users\Compag\Desktop\PP-2\week5\SnakeGame\Snake\obj\Debug\Snake.csproj.CoreCompileInputs.cache
+C:\Users\Compag\Desktop\PP-2\week5\SnakeGame\Snake\bin\Debug\Snake.exe.config
+C:\Users\Compag\Desktop\PP-2\week5\SnakeGame\Snake\bin\Debug\Snake.exe
+C:\Users\Compag\Desktop\PP-2\week5\SnakeGame\Snake\bin\Debug\Snake.pdb
+C:\Users\Compag\Desktop\PP-2\week5\SnakeGame\Snake\obj\Debug\Snake.exe
+C:\Users\Compag\Desktop\PP-2\week5\SnakeGame\Snake\obj\Debug\Snake.pdb

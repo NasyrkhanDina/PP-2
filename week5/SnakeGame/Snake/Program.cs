@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,8 @@ namespace Snake
     {
         static void Main(string[] args)
         {
+            Console.SetWindowSize(80, 30);
+
             Console.CursorVisible = false;
            // Console.SetWindowSize(35, 35);
            // int coo1 = random.Next(2, Console.WindowWidth - 2);
@@ -55,7 +58,10 @@ namespace Snake
                 {
                     Console.Clear();
                     Console.SetCursorPosition(7, 7);
-                    Console.WriteLine("GAME OVER!!!");
+                    StreamReader sr = new StreamReader(@"C:\Users\Compag\Desktop\PP-2\week5\SnakeGame\Snake\gameover.txt");
+                    string s = sr.ReadToEnd();
+                    Console.WriteLine(s);
+
                     Console.ReadKey();
                     snake = new Snake();
                     level = 1;
@@ -79,7 +85,7 @@ namespace Snake
                 {
                     snake.AddBody();
                     food.SetRandomPos();
-                    score += 1;
+                    score += 10;
                     Console.SetCursorPosition(food.x, food.y);
                     Console.Write("$");
                     
@@ -88,7 +94,7 @@ namespace Snake
                     food = new Food(coo1, coo2);
     */            
                 }
-                if (score == level * 5)
+                if (score == level * 50)
                 {
                     level++;
                     wall = new Wall(level);

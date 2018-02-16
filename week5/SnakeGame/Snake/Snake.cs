@@ -49,7 +49,7 @@ namespace Snake
             {
                 if (i == 0)
                 {
-                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.ForegroundColor = ConsoleColor.Blue;
 
                 }
                 else

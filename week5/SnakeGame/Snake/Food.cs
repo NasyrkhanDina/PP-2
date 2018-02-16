@@ -21,8 +21,8 @@ namespace Snake
         }
         public void SetRandomPos()
         {
-            x = new Random().Next(1, Console.WindowWidth);
-            y = new Random().Next(1, Console.WindowHeight);
+            x = new Random().Next(1, Console.WindowWidth-1);
+            y = new Random().Next(1, Console.WindowHeight-1);
         }
         public bool foodonwall(Wall w)
         {

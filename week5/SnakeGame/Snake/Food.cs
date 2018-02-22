@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Snake
 {
+    [Serializable]
     class Food
     {
         public int x, y;
@@ -22,7 +23,7 @@ namespace Snake
         public void SetRandomPos()
         {
             x = new Random().Next(1, Console.WindowWidth-1);
-            y = new Random().Next(1, Console.WindowHeight-1);
+            y = new Random().Next(5, Console.WindowHeight-1);
         }
         public bool foodonwall(Wall w)
         {

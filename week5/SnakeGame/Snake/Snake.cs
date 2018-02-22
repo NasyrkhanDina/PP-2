@@ -3,14 +3,17 @@ using System.Collections.Generic;
 
 namespace Snake
 {
+    [Serializable]
     class Snake
     {
         public List<Point> body;
         public string sign;
         ConsoleColor color;
+        public int score;
      
         public Snake()
         {
+            
             body = new List<Point>();
             body.Add(new Point(5, 5));
             color = ConsoleColor.Yellow;

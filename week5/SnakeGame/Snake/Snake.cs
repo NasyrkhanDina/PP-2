@@ -41,10 +41,10 @@ namespace Snake
             if (body[0].x > Console.WindowWidth - 1)
                 body[0].x = 1;
 
-            if (body[0].y < 1)
+            if (body[0].y < 3)
                 body[0].y = Console.WindowHeight - 1;
             if (body[0].y > Console.WindowHeight - 1)
-                body[0].y = 1;
+                body[0].y = 3;
         }
         public void Draw()
         {
@@ -87,21 +87,9 @@ namespace Snake
         {
             if(body[0].x == f.x && body[0].y == f.y)
             {
-               // body.Add(new Point(0, 0));
                 return true;
             }
             return false;
         }
-
-        /*public bool NewLevel(int level)
-        {
-            if (body.Count >= level * 5)
-            {
-                return true;
-            }
-            return false;
-        }
-        */
-
     }
 }

@@ -113,7 +113,7 @@ namespace Snake
                 Console.SetCursorPosition(0, 0);
                 Console.WriteLine("High score : " + " " + points + "   Score: " + score + " " + "Level" + " " + level);
                 Console.SetCursorPosition(0, 1);
-                Console.WriteLine("If you want to safe current score, enter [5]");
+                Console.WriteLine("If you want to save current score, enter [Probel]");
                 Console.SetCursorPosition(0, 2);
                 Console.WriteLine("If you want to quit, enter [Escape] ");
 
@@ -145,7 +145,7 @@ namespace Snake
                     wall = new Wall(level);
                 }
 
-                if(info.Key == ConsoleKey.NumPad5)
+                if(info.Key == ConsoleKey.Spacebar)
                 {
                     snake.score = score;
                     F1(snake);
@@ -164,7 +164,7 @@ namespace Snake
                     StreamReader sr = new StreamReader(@"C:\Users\Compag\Desktop\PP-2\week5\SnakeGame\Snake\gameover.txt");
                     string s = sr.ReadToEnd();
                     Console.WriteLine(s);
-                    Console.WriteLine("High Score : " + points + "Your Score is " + score);
+                    Console.WriteLine("High Score : " + " " + points + "Your Score is " + score);
 
                     Console.ReadKey();
                     snake = new Snake();
@@ -186,13 +186,13 @@ namespace Snake
                 {
                     snake.AddBody();
                     food.SetRandomPos();
-                    score += 1;
+                    score += 10;
                     points = Math.Max(points, score);
                     Console.SetCursorPosition(food.x, food.y);
                     Console.Write("$");
                     
                 }
-                if (score == level * 5)
+                if (score == level * 50)
                 {
                     level++;
                     wall = new Wall(level);

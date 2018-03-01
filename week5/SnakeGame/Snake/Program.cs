@@ -4,12 +4,25 @@ using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Snake
 {
     class Program
     {
+        static Snake snake = new Snake();
+        static int level = 1;
+        static Wall wall = new Wall(level);
+        static  int direction = 1; // 1 - left, 2 - right, 3 - up, 4 - down;
+        static  int  speed = 400;
+        static Food food = new Food();
+        
+        static int score = 0;
+        static int points = F7();
+        //static ConsoleKeyInfo info;
+       // static ConsoleKeyInfo key1;
+        
 
         static void F1(Snake snake)
         {
@@ -26,8 +39,6 @@ namespace Snake
             fs.Close();
             return s;
         }
-
-
         static void F3(Wall wall)
         {
             FileStream fs = new FileStream("data1.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
@@ -43,7 +54,6 @@ namespace Snake
             fs.Close();
             return w;
         }
-
         static void F5(Food food)
         {
             FileStream fs = new FileStream("data2.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
@@ -51,7 +61,6 @@ namespace Snake
             bf.Serialize(fs, food);
             fs.Close();
         }
-
         static Food F6()
         {
             FileStream fs = new FileStream("data2.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
@@ -67,7 +76,6 @@ namespace Snake
             sr.Close();
             return int.Parse(s);
         }
-
         static void F8(int a)
         {
             StreamWriter sw = new StreamWriter(@"C:\Users\Compag\Desktop\PP-2\week5\SnakeGame\Snake\points.txt");
@@ -75,18 +83,122 @@ namespace Snake
             sw.Close();
 
         }
+        
+
+         public static void PlayGame()
+        {
+            while (true)
+            {
+                if (direction == 1)
+                {
+                    snake.Move(1, 0);
+                }
+                if (direction == 2)
+                {
+                    snake.Move(-1, 0);
+                }
+                if (direction == 3)
+                {
+                    snake.Move(0, 1);
+                }
+                if (direction == 4)
+                {
+                    snake.Move(0, -1);
+                }
+
+                Console.SetCursorPosition(0, 0);
+                Console.WriteLine("High score : " + " " + points + "   Score: " + score + " " + "Level" + " " + level);
+                Console.SetCursorPosition(0, 1);
+                Console.WriteLine("If you want to save current score, enter [Probel]");
+                Console.SetCursorPosition(0, 2);
+                Console.WriteLine("If you want to quit, enter [Escape] ");
+
+              
+                if (snake.CollisionWithWall(wall) || snake.Collision())
+                {
+                    Console.Clear();
+                    Console.SetCursorPosition(7, 7);
+                    StreamReader sr = new StreamReader(@"C:\Users\Compag\Desktop\PP-2\week5\SnakeGame\Snake\gameover.txt");
+                    string s = sr.ReadToEnd();
+                    Console.WriteLine(s);
+                    Console.WriteLine("High Score : " + " " + points + "Your Score is " + score);
+
+                    Console.ReadKey();
+
+                    speed = 400;
+                    snake = new Snake();
+                    level = 1;
+                    wall = new Wall(level);
+                    score = 0;
+
+                    while (!food.foodonwall(wall) || !food.foononsnake(snake))
+                    {
+                        food.SetRandomPos();
+                        Console.SetCursorPosition(food.x, food.y);
+                        Console.Write("$");
+                    }
+                }
+
+                if (snake.Eat(food))
+                {
+                    snake.AddBody();
+                    food.SetRandomPos();
+                    score += 10;
+                    points = Math.Max(points, score);
+                    Console.SetCursorPosition(food.x, food.y);
+                    Console.Write("$");
+
+                    while (!food.foodonwall(wall) || !food.foononsnake(snake))
+                    {
+                        food.SetRandomPos();
+                        Console.SetCursorPosition(food.x, food.y);
+                        Console.Write("$");
+                    }
+
+                }
+                if (score == level * 50)
+                {
+                    Console.Clear();
+                    level++;
+                    wall = new Wall(level);
+
+                    speed = Math.Max(1, speed - 50);
+
+                    while (!food.foodonwall(wall) || !food.foononsnake(snake))
+                    {
+                        food.SetRandomPos();
+                        Console.SetCursorPosition(food.x, food.y);
+                        Console.Write("$");
+                    }
+                }
+                Console.Clear();
+                snake.Draw();
+                food.ShowFood();
+                wall.WallDraw();
+                Thread.Sleep(speed);
+             
+            }
+        }
+
 
 
         static void Main(string[] args)
         {
+
+            Thread thread = new Thread(PlayGame);
+           // thread.Start();
+
             Console.SetWindowSize(80, 30);
             Console.CursorVisible = false;
-            int level = 1;
-            int score = 0;
-            int points = F7();
-            Wall wall = new Wall(level);
+           
+            
+            //level = 1;
+            //score = 0;
+            //points = F7();
+            /*Wall wall = new Wall(level);
             Snake snake = new Snake();
             Food food = new Food();
+            */
 
             Console.WriteLine("If you want to start new game press R ");
             Console.WriteLine("If you want to continue last game press C");
@@ -103,9 +215,10 @@ namespace Snake
             }
 
             Console.Clear();
-            wall.WallDraw();
-            snake.Draw();
-            food.ShowFood();
+            thread.Start();
+            //wall.WallDraw();
+            //snake.Draw();
+           // food.ShowFood();
 
 
             while (true)
@@ -120,19 +233,19 @@ namespace Snake
                 ConsoleKeyInfo info = Console.ReadKey();
                 if (info.Key == ConsoleKey.UpArrow)
                 {
-                    snake.Move(0, -1);
+                    direction = 4;
                 }
                 if (info.Key == ConsoleKey.DownArrow)
                 {
-                    snake.Move(0, 1);
+                    direction = 4;
                 }
                 if (info.Key == ConsoleKey.LeftArrow)
                 {
-                    snake.Move(-1, 0);
+                    direction = 1;
                 }
                 if (info.Key == ConsoleKey.RightArrow)
                 {
-                    snake.Move(1, 0);
+                    direction = 2;
                 }
 
                 if (info.Key == ConsoleKey.R) // new game
@@ -143,6 +256,7 @@ namespace Snake
                     level = 1;
                     score = 0;
                     wall = new Wall(level);
+                    speed = 400;
                 }
 
                 if(info.Key == ConsoleKey.Spacebar)
@@ -157,52 +271,14 @@ namespace Snake
                 {
                     return;
                 }
-                if (snake.CollisionWithWall(wall) || snake.Collision())
-                {
-                    Console.Clear();
-                    Console.SetCursorPosition(7, 7);
-                    StreamReader sr = new StreamReader(@"C:\Users\Compag\Desktop\PP-2\week5\SnakeGame\Snake\gameover.txt");
-                    string s = sr.ReadToEnd();
-                    Console.WriteLine(s);
-                    Console.WriteLine("High Score : " + " " + points + "Your Score is " + score);
+               
+               
 
-                    Console.ReadKey();
-                    snake = new Snake();
-                    level = 1;
-                    wall = new Wall(level);
-                    score = 0;
-
-                   
-                }
-               /* while(!food.foodonwall(wall) || !food.foononsnake(snake))
-                {
-                    food.SetRandomPos();
-                    Console.SetCursorPosition(food.x, food.y);
-                    Console.Write("$");
-                }
-                */
-                
-                if (snake.Eat(food))
-                {
-                    snake.AddBody();
-                    food.SetRandomPos();
-                    score += 10;
-                    points = Math.Max(points, score);
-                    Console.SetCursorPosition(food.x, food.y);
-                    Console.Write("$");
-                    
-                }
-                if (score == level * 50)
-                {
-                    level++;
-                    wall = new Wall(level);
-                }
-
-                Console.Clear();
+               /* Console.Clear();
                 snake.Draw();
                 food.ShowFood();
                 wall.WallDraw();
-
+                */
             }
         }
     }

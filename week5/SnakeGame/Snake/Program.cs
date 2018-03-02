@@ -91,19 +91,19 @@ namespace Snake
             {
                 if (direction == 1)
                 {
-                    snake.Move(1, 0);
+                    snake.Move(-1, 0);
                 }
                 if (direction == 2)
                 {
-                    snake.Move(-1, 0);
+                    snake.Move(1, 0);
                 }
                 if (direction == 3)
                 {
-                    snake.Move(0, 1);
+                    snake.Move(0, -1);
                 }
                 if (direction == 4)
                 {
-                    snake.Move(0, -1);
+                    snake.Move(0, 1);
                 }
 
                 Console.SetCursorPosition(0, 0);
@@ -162,7 +162,7 @@ namespace Snake
                     level++;
                     wall = new Wall(level);
 
-                    speed = Math.Max(1, speed - 50);
+                    speed = Math.Max(1, speed - 100);
 
                     while (!food.foodonwall(wall) || !food.foononsnake(snake))
                     {
@@ -233,7 +233,7 @@ namespace Snake
                 ConsoleKeyInfo info = Console.ReadKey();
                 if (info.Key == ConsoleKey.UpArrow)
                 {
-                    direction = 4;
+                    direction = 3;
                 }
                 if (info.Key == ConsoleKey.DownArrow)
                 {

@@ -45,7 +45,7 @@ namespace Bonus_Task
 
 
                     Console.SetCursorPosition(0, 25);
-                    Console.WriteLine("If you want to buy a book press [C]");
+                    Console.WriteLine("If you want to buy a book press [C] after write the name of the book");
                     ConsoleKeyInfo keyInfo = Console.ReadKey();
 
                     if(keyInfo.Key == ConsoleKey.C)
@@ -53,6 +53,7 @@ namespace Bonus_Task
                         Console.Clear();
                         string name = Console.ReadLine();
                         shop.BuyShop(name);
+                        shop.TheAmountOfBooks();
 
                     }
 

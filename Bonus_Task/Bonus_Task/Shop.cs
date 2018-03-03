@@ -69,5 +69,20 @@ namespace Bonus_Task
 
             }
         }
+
+        public void TheAmountOfBooks()
+        {
+            for(int i = 0; i < list.Count; i++)
+            {
+                if(list[i].amount < 1)
+                {
+                    Console.WriteLine("Sorry, we do not have this book. Come later!");
+                }
+                else
+                {
+                    Console.WriteLine("Thank you for your shop!");
+                }
+            }
+        }
     }
 }

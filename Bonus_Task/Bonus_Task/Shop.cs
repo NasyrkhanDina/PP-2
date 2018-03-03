@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Bonus_Task
 {
@@ -13,39 +14,59 @@ namespace Bonus_Task
 
         public Shop() { }
 
-        public Shop(string name)
+
+        public void PokazShop()
         {
-            this.name = name;
-        }
-
-        public void ShowShop(List<Shop> s)
-        {
-            Console.Clear();
-
-            //foreach(Shop p in s)
-
-            for(int i = 1; i <= s.Count; i++)
+            for(int i = 0; i < list.Count; i++)
             {
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.SetCursorPosition(40, 15);
-                Console.WriteLine(i + "." + s[i]);
-                Console.WriteLine("");
-                Console.WriteLine("Please, choose one of them.");
+                Console.WriteLine(list[i].name + " " + list[i].amount + " " + list[i].price);
             }
         }
 
         public void OpenShop()
         {
-            Console.Clear();
-
-            while (true)
+            list = new List<Product>();
+            StreamReader sr = new StreamReader(@"C:\Users\Compag\Desktop\PP-2\Bonus_Task\Bonus_Task\" + name + ".txt");
+            int n = int.Parse(sr.ReadLine());
+            for (int i = 1; i <= n; i++)
             {
-                Console.Clear();
-                for(int i = 1; i <= list.Count; i++)
-                {
-                    Console.WriteLine(i + "." + list[i].name + " " + list[i].amount + " " + list[i].price);
+                string ss = Console.ReadLine();
+                string[] sss = ss.Split(' ');
+                string name = sss[0];
+                int amount = int.Parse(sss[1]);
+                int price = int.Parse(sss[2]);
+                list.Add(new Product(name, amount, price));
 
+            }
+            sr.Close();
+        }
+
+        public void ShowShop(List<Product> p)
+        {
+           for(int i = 1; i <= p.Count; i++)
+            {
+                int x = 0, y = 0;
+                Console.SetCursorPosition(x,y);
+                Console.BackgroundColor = ConsoleColor.DarkGray;
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine(i + "." + p[i]);
+                x++;
+                y++;
+                
+            }
+           
+        }
+
+        public void BuyShop(string name)
+        {
+        for(int i = 0; i < list.Count(); i++)
+            {
+                if(name == list[i].name)
+                {
+                    list[i].amount--;
+                    
                 }
+
             }
         }
     }

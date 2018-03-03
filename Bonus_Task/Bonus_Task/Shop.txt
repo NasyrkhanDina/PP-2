@@ -1,0 +1,11 @@
+10
+The_Brothers_Karamazov 2 1200
+The_Adventures_of_Huckleberry_Finn 5 950
+Blindness 1 890
+Decameron 6 1000
+Fairy_Tales_and_Stories 5 1200
+Faust 12 1000
+Hunger 20 900
+The_Odyssey 12 600
+The_Old_Man_and_the_Sea 4 900
+Pride_and_Prejudice 20 1500

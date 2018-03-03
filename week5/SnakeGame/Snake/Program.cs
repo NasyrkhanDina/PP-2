@@ -125,6 +125,7 @@ namespace Snake
 
                     Console.ReadKey();
 
+                    Console.Clear();
                     speed = 400;
                     snake = new Snake();
                     level = 1;
@@ -171,7 +172,7 @@ namespace Snake
                         Console.Write("$");
                     }
                 }
-                Console.Clear();
+               // Console.Clear();
                 snake.Draw();
                 food.ShowFood();
                 wall.WallDraw();

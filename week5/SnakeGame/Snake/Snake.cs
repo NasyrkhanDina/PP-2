@@ -27,6 +27,11 @@ namespace Snake
        
         public void Move(int dx, int dy)
         {
+            foreach(Point p in body)
+            {
+                Console.SetCursorPosition(p.x, p.y);
+                Console.Write(" ");
+            }
            
             for(int i = body.Count - 1; i > 0; i--)
             {

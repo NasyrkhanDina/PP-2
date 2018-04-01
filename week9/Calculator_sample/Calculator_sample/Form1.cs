@@ -108,5 +108,70 @@ namespace Calculator_sample
         {
             textBox1.Text = memory.ToString();
         }
+
+        private void sinx_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+
+            double n = double.Parse(textBox1.Text);
+
+            if(btn.Text == "sin")
+            {
+                n = (double.Parse(textBox1.Text) * Math.PI) / 180;
+                textBox1.Text = Math.Sin(n).ToString();
+            }
+
+            if(btn.Text == "cos")
+            {
+                n = (double.Parse(textBox1.Text) * Math.PI) / 180;
+                textBox1.Text = Math.Sin(n).ToString();
+            }
+
+            if(btn.Text == "tan")
+            {
+                n = (double.Parse(textBox1.Text) * Math.PI) / 180;
+                textBox1.Text = Math.Tan(n).ToString();
+            }
+
+            if(btn.Text == "log")
+            {
+                textBox1.Text = (Math.Log(n)).ToString();
+            }
+
+            if(btn.Text == "Exp")
+            {
+                /* double result;
+                 result= Math.Pow(Math.E,n);
+                 textBox1.Text = result.ToString();
+                  */
+
+                textBox1.Text = Math.Exp(n).ToString();
+    }
+
+            if(btn.Text == "n!")
+            {
+                int f = 1;
+
+                for(int i = 1; i <= n; i++)
+                {
+                    f *= i;
+                }
+
+                textBox1.Text = f.ToString();
+      
+            }
+
+            if(btn.Text == "10^x")
+            {
+                textBox1.Text = Math.Pow(10, n).ToString();
+            }
+
+            if(btn.Text == "x^2")
+            {
+                textBox1.Text = (n * n).ToString();
+            }
+
+            
+        }
     }
 }

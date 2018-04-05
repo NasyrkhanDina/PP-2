@@ -12,7 +12,7 @@ namespace Calculator_sample
 {
     public partial class Form1 : Form
     {
-        Double value = 0;
+        Double first = 0, second = 0;
         String operation = "";
         bool isOperationPressed = false;
         double memory = 0;
@@ -43,27 +43,35 @@ namespace Calculator_sample
         {
             Button btn = sender as Button;
             operation = btn.Text;
-            value = Double.Parse(textBox1.Text);
+            first = Double.Parse(textBox1.Text);
             isOperationPressed = true;
             //label1.Text = value + " " + operation;
         }   
 
         private void button18_Click(object sender, EventArgs e)
         {
-           // label1.Text = "";
+            if (isOperationPressed)
+            {
+                second = first;
+            }
+
+            else
+            {
+                second = Double.Parse(textBox1.Text);
+            }
             switch (operation)
             {
                 case "+":
-                  textBox1.Text = (value + Double.Parse(textBox1.Text)).ToString();
+                  textBox1.Text = (first + second).ToString();
                     break;
                 case "-":
-                    textBox1.Text = (value - Double.Parse(textBox1.Text)).ToString();
+                    textBox1.Text = (first - second).ToString();
                     break;
                 case "/":
-                    textBox1.Text = (value / Double.Parse(textBox1.Text)).ToString();
+                    textBox1.Text = (first / second).ToString();
                     break;
                 case "*":
-                    textBox1.Text = (value * Double.Parse(textBox1.Text)).ToString();
+                    textBox1.Text = (first * second).ToString();
                     break;              
             }
 
@@ -73,7 +81,7 @@ namespace Calculator_sample
         private void C_Click(object sender, EventArgs e)
         {
             textBox1.Text = "0";
-            value = 0;
+            first = 0;
 
         }
 
@@ -86,9 +94,9 @@ namespace Calculator_sample
 
         private void percentage_Click(object sender, EventArgs e)
         {
-            double p = value * (double.Parse(textBox1.Text) / 100);
+            double p = first * (double.Parse(textBox1.Text) / 100);
            // textBox1.Text = (double.Parse(textBox1.Text) + p).ToString();
-           textBox1.Text = (value + p).ToString();
+           textBox1.Text = (first + p).ToString();
 
         }
 
@@ -151,14 +159,11 @@ namespace Calculator_sample
             if(btn.Text == "n!")
             {
                 int f = 1;
-
                 for(int i = 1; i <= n; i++)
                 {
                     f *= i;
                 }
-
-                textBox1.Text = f.ToString();
-      
+              textBox1.Text = f.ToString();
             }
 
             if(btn.Text == "10^x")
@@ -172,6 +177,11 @@ namespace Calculator_sample
             }
 
             
+        }
+
+        private void xyroot_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = Math.Pow(first, second) + "";
         }
     }
 }

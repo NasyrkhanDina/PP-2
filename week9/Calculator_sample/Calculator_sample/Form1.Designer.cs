@@ -381,7 +381,7 @@
             this.xyroot.TabIndex = 31;
             this.xyroot.Text = "x^y";
             this.xyroot.UseVisualStyleBackColor = true;
-            this.xyroot.Click += new System.EventHandler(this.sinx_Click);
+            this.xyroot.Click += new System.EventHandler(this.xyroot_Click);
             // 
             // xsqrt
             // 

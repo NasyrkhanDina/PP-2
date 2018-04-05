@@ -117,6 +117,18 @@ namespace Calculator_sample
             textBox1.Text = memory.ToString();
         }
 
+        private void button19_Click(object sender, EventArgs e)
+        {
+            memory = memory - double.Parse(textBox1.Text);
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            memory = memory + double.Parse(textBox1.Text);
+        }
+
+
+
         private void sinx_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
@@ -176,12 +188,19 @@ namespace Calculator_sample
                 textBox1.Text = (n * n).ToString();
             }
 
+            if(btn.Text == "x^3")
+            {
+                textBox1.Text = n * n * n + "";
+            }
+
+            if(btn.Text == "Mod")
+            {
+                textBox1.Text = n % int.Parse(textBox1.Text) +  "";
+            }
+
             
         }
 
-        private void xyroot_Click(object sender, EventArgs e)
-        {
-            textBox1.Text = Math.Pow(first, second) + "";
-        }
+       
     }
 }

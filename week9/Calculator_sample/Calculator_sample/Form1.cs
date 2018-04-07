@@ -30,9 +30,23 @@ namespace Calculator_sample
 
             }
             isOperationPressed = false;
-            Button b = sender as Button;
-            textBox1.Text = textBox1.Text + b.Text;
-        }
+            Button btn = sender as Button;
+            textBox1.Text = textBox1.Text + btn.Text;
+           /* if (btn.Text == ",")
+
+            {
+
+                if (textBox1.Text == "")
+                {
+                    textBox1.Text = "0";
+                }
+                if (textBox1.Text.Contains(","))
+                {
+                    textBox1.Text = textBox1.Text + btn.Text;
+                }
+            }
+            */
+            }
 
         private void button12_Click(object sender, EventArgs e)
         {
@@ -53,6 +67,9 @@ namespace Calculator_sample
             if (isOperationPressed)
             {
                 second = first;
+               /* textBox1.Text = first + second + "";
+                first = second;
+                */
             }
 
             else
@@ -72,7 +89,13 @@ namespace Calculator_sample
                     break;
                 case "*":
                     textBox1.Text = (first * second).ToString();
-                    break;              
+                    break;
+                case "^":
+                    textBox1.Text = Math.Pow(first, second) + "";
+                    break;
+                case "Mod":
+                    textBox1.Text = (first % second).ToString();
+                    break;
             }
 
             isOperationPressed = false;
@@ -198,9 +221,37 @@ namespace Calculator_sample
                 textBox1.Text = n % int.Parse(textBox1.Text) +  "";
             }
 
-            
-        }
+            /*if(btn.Text == ",")
 
-       
+            {
+               
+                if(textBox1.Text == "")
+                {
+                    textBox1.Text = "0";
+                }
+                if (textBox1.Text.Contains(","))
+                {
+                    textBox1.Text = textBox1.Text + btn.Text;
+                }
+            }
+            */
+
+            if(btn.Text == "+/-")
+            {
+                textBox1.Text = ((-1) * Double.Parse(textBox1.Text)).ToString();
+            }
+            
+            if(btn.Text == "<-")
+            {
+                if(textBox1.Text.Length > 0)
+                {
+                    textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1, 1);
+                }
+                if(textBox1.Text == "")
+                {
+                    textBox1.Text = "0";
+                }
+            }
+        }
     }
 }

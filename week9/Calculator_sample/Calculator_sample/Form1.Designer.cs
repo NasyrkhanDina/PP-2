@@ -380,7 +380,7 @@
             this.xyroot.Name = "xyroot";
             this.xyroot.Size = new System.Drawing.Size(40, 34);
             this.xyroot.TabIndex = 31;
-            this.xyroot.Text = "x^y";
+            this.xyroot.Text = "<-";
             this.xyroot.UseVisualStyleBackColor = true;
             this.xyroot.Click += new System.EventHandler(this.sinx_Click);
             // 
@@ -430,7 +430,7 @@
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(40, 34);
             this.button20.TabIndex = 36;
-            this.button20.Text = "Mod";
+            this.button20.Text = "+/-";
             this.button20.UseVisualStyleBackColor = true;
             this.button20.Click += new System.EventHandler(this.sinx_Click);
             // 

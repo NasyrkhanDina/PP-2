@@ -1,0 +1,10 @@
+C:\Users\Compag\Desktop\PP-2\week(9-10)\Operationsfor2numbers\Operationsfor2numbers\bin\Debug\Operationsfor2numbers.exe.config
+C:\Users\Compag\Desktop\PP-2\week(9-10)\Operationsfor2numbers\Operationsfor2numbers\bin\Debug\Operationsfor2numbers.exe
+C:\Users\Compag\Desktop\PP-2\week(9-10)\Operationsfor2numbers\Operationsfor2numbers\bin\Debug\Operationsfor2numbers.pdb
+C:\Users\Compag\Desktop\PP-2\week(9-10)\Operationsfor2numbers\Operationsfor2numbers\obj\Debug\Operationsfor2numbers.csprojResolveAssemblyReference.cache
+C:\Users\Compag\Desktop\PP-2\week(9-10)\Operationsfor2numbers\Operationsfor2numbers\obj\Debug\Operationsfor2numbers.Form1.resources
+C:\Users\Compag\Desktop\PP-2\week(9-10)\Operationsfor2numbers\Operationsfor2numbers\obj\Debug\Operationsfor2numbers.Properties.Resources.resources
+C:\Users\Compag\Desktop\PP-2\week(9-10)\Operationsfor2numbers\Operationsfor2numbers\obj\Debug\Operationsfor2numbers.csproj.GenerateResource.cache
+C:\Users\Compag\Desktop\PP-2\week(9-10)\Operationsfor2numbers\Operationsfor2numbers\obj\Debug\Operationsfor2numbers.csproj.CoreCompileInputs.cache
+C:\Users\Compag\Desktop\PP-2\week(9-10)\Operationsfor2numbers\Operationsfor2numbers\obj\Debug\Operationsfor2numbers.exe
+C:\Users\Compag\Desktop\PP-2\week(9-10)\Operationsfor2numbers\Operationsfor2numbers\obj\Debug\Operationsfor2numbers.pdb

@@ -1,0 +1,7 @@
+C:\Users\Compag\Desktop\PP-2\Bonus_Task\Bonus_Task\bin\Debug\Bonus_Task.exe.config
+C:\Users\Compag\Desktop\PP-2\Bonus_Task\Bonus_Task\bin\Debug\Bonus_Task.exe
+C:\Users\Compag\Desktop\PP-2\Bonus_Task\Bonus_Task\bin\Debug\Bonus_Task.pdb
+C:\Users\Compag\Desktop\PP-2\Bonus_Task\Bonus_Task\obj\Debug\Bonus_Task.csprojResolveAssemblyReference.cache
+C:\Users\Compag\Desktop\PP-2\Bonus_Task\Bonus_Task\obj\Debug\Bonus_Task.csproj.CoreCompileInputs.cache
+C:\Users\Compag\Desktop\PP-2\Bonus_Task\Bonus_Task\obj\Debug\Bonus_Task.exe
+C:\Users\Compag\Desktop\PP-2\Bonus_Task\Bonus_Task\obj\Debug\Bonus_Task.pdb

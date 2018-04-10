@@ -18,6 +18,8 @@ namespace Paint_Form
         Graphics g;
         bool clicked;
         Point prev, cur;
+        int tbar;
+        public SolidBrush brush;
 
         public enum Tool
         {
@@ -25,6 +27,7 @@ namespace Paint_Form
             CIRCLE,
             RECTANGLE,
             FILL,
+            ERASER,
         };
 
         Tool tool = Tool.PEN;
@@ -34,27 +37,31 @@ namespace Paint_Form
         {
             InitializeComponent();
             bmp = new Bitmap(pictureBox1.Width, pictureBox1.Height);
-            fillcolor = Color.Blue;
+            fillcolor = pictureBox2.BackColor;
             g = Graphics.FromImage(bmp);
             g.Clear(Color.White);
             pictureBox1.Image = bmp;
             clicked = false;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
             cur = e.Location;
             if (clicked && tool == Tool.PEN)
             {
-                g.DrawLine(new Pen(Color.Black), prev.X, prev.Y, cur.X, cur.Y);
+                g.DrawLine(new Pen(pictureBox2.BackColor, tbar), prev.X, prev.Y, cur.X, cur.Y);
                 pictureBox1.Refresh();
                 prev = cur;
             }
+
+            if(clicked && tool == Tool.ERASER)
+            {
+                g.DrawLine(new Pen(Color.White, tbar), prev.X, prev.Y, cur.X, cur.Y);
+                pictureBox1.Refresh();
+                prev = cur;
+            }
+
         }
 
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
@@ -67,7 +74,7 @@ namespace Paint_Form
                 int w = Math.Abs(prev.X - cur.X);
                 int h = Math.Abs(prev.Y - cur.Y);
 
-                g.DrawRectangle(new Pen(Color.Black, 3), new Rectangle(x, y, w, h));
+                g.DrawRectangle(new Pen(pictureBox2.BackColor, tbar), new Rectangle(x, y, w, h));
                 pictureBox1.Refresh();
             }
 
@@ -78,7 +85,7 @@ namespace Paint_Form
                 int w = Math.Abs(prev.X - cur.X);
                 int h = Math.Abs(prev.Y - cur.Y);
 
-                g.DrawEllipse(new Pen(Color.Red, 3), new Rectangle(x, y, w, h));
+                g.DrawEllipse(new Pen(pictureBox2.BackColor, tbar), new Rectangle(x, y, w, h));
                 pictureBox1.Refresh();
             }
 
@@ -116,7 +123,7 @@ namespace Paint_Form
                 int w = Math.Abs(prev.X - cur.X);
                 int h = Math.Abs(prev.Y - cur.Y);
 
-                e.Graphics.DrawRectangle(new Pen(Color.Black, 3), new Rectangle(x, y, w, h));
+                e.Graphics.DrawRectangle(new Pen(Color.Black, tbar), new Rectangle(x, y, w, h));
             }
 
             if (clicked && tool == Tool.CIRCLE)
@@ -126,7 +133,49 @@ namespace Paint_Form
                 int w = Math.Abs(prev.X - cur.X);
                 int h = Math.Abs(prev.Y - cur.Y);
 
-                e.Graphics.DrawEllipse(new Pen(Color.Red, 3), new Rectangle(x, y, w, h));
+                e.Graphics.DrawEllipse(new Pen(Color.Red, tbar), new Rectangle(x, y, w, h));
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tool = Tool.ERASER;
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            tbar = trackBar1.Value;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if(colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                // brush.Color = colorDialog1.Color;
+                pictureBox2.BackColor = colorDialog1.Color;
+            }
+        }
+
+        private void open_Click(object sender, EventArgs e)
+        {
+            openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "Image Files(*.BMP)|*.BMP|Image Files(*.JPG)|*.JPG|Image Files(*.GIF)|*.GIF";
+            if(openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                openFileDialog1.OpenFile();
+                bmp = new Bitmap(openFileDialog1.OpenFile());
+                pictureBox1.Image = bmp;
+                g = Graphics.FromImage(bmp);
+            }
+        }
+
+        private void save_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "Image Files(*.BMP)|*.BMP|Image Files(*.JPG)|*.JPG|Image Files(*.GIF)|*.GIF";
+            if(saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox1.Image.Save(saveFileDialog1.FileName);
             }
         }
 
@@ -143,6 +192,7 @@ namespace Paint_Form
                 while(q.Count > 0)
                 {
                     Point cur = q.Dequeue();
+
                     FillCheck(cur.X + 1, cur.Y);
                     FillCheck(cur.X - 1, cur.Y);
                     FillCheck(cur.X, cur.Y + 1);
@@ -160,10 +210,13 @@ namespace Paint_Form
                 return;
             if (bmp.GetPixel(x,y) == color)
             {
+                fillcolor = pictureBox2.BackColor;
+
                 bmp.SetPixel(x, y, fillcolor);
                 q.Enqueue(new Point(x, y));
 
             }
         }
+
     }
 }

@@ -10,48 +10,58 @@ using System.Windows.Forms;
 
 namespace gameball
 {
+    
     public partial class Form1 : Form
     {
         Graphics g;
-        Pen pen;
-        int x = 200, y = 150, dx = 10, dy = 10;
+
+        int x, y, pathx, pathy;
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            g.DrawEllipse(new Pen(Color.Black, 3), new Rectangle(x, y, 20, 20));
+        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (x + 50 > Width || x < 0)
+
+            if (x < 0 || x + 50 >= Width)
             {
-                dx *= -1;
+                pathx *= -1;
             }
 
-            x += dx;
+            x += pathx;
 
-            if(y + 50 > Height || y < 0)
+            if (y < 0 || y + 50 >= Height)
             {
-                dy *= -1;
+                pathy *= -1;
             }
-            y += dy;
+
+            y += pathy;
 
             Refresh();
+          
+
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             timer1.Start();
-        }
 
-        private void Form1_Paint(object sender, PaintEventArgs e)
-        {
-            e.Graphics.DrawEllipse(pen, new Rectangle(x, y, 50, 50));
-        }
 
+        }
 
         public Form1()
         {
             InitializeComponent();
+            x = 150;
+            y = 200;
+            pathx = 10;
+            pathy = 10;
             g = CreateGraphics();
-            pen = new Pen(Color.Blue, 3);
-        }
 
+        }
     }
 }

@@ -1,0 +1,10 @@
+C:\Users\Compag\Desktop\PP-2\gameball\gameball\bin\Debug\gameball.exe.config
+C:\Users\Compag\Desktop\PP-2\gameball\gameball\bin\Debug\gameball.exe
+C:\Users\Compag\Desktop\PP-2\gameball\gameball\bin\Debug\gameball.pdb
+C:\Users\Compag\Desktop\PP-2\gameball\gameball\obj\Debug\gameball.csprojResolveAssemblyReference.cache
+C:\Users\Compag\Desktop\PP-2\gameball\gameball\obj\Debug\gameball.Form1.resources
+C:\Users\Compag\Desktop\PP-2\gameball\gameball\obj\Debug\gameball.Properties.Resources.resources
+C:\Users\Compag\Desktop\PP-2\gameball\gameball\obj\Debug\gameball.csproj.GenerateResource.cache
+C:\Users\Compag\Desktop\PP-2\gameball\gameball\obj\Debug\gameball.csproj.CoreCompileInputs.cache
+C:\Users\Compag\Desktop\PP-2\gameball\gameball\obj\Debug\gameball.exe
+C:\Users\Compag\Desktop\PP-2\gameball\gameball\obj\Debug\gameball.pdb

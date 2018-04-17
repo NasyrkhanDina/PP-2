@@ -1,0 +1,10 @@
+C:\Users\Compag\Desktop\PP-2\endterm\task2\task2\bin\Debug\task2.exe.config
+C:\Users\Compag\Desktop\PP-2\endterm\task2\task2\bin\Debug\task2.exe
+C:\Users\Compag\Desktop\PP-2\endterm\task2\task2\bin\Debug\task2.pdb
+C:\Users\Compag\Desktop\PP-2\endterm\task2\task2\obj\Debug\task2.csprojResolveAssemblyReference.cache
+C:\Users\Compag\Desktop\PP-2\endterm\task2\task2\obj\Debug\task2.Form1.resources
+C:\Users\Compag\Desktop\PP-2\endterm\task2\task2\obj\Debug\task2.Properties.Resources.resources
+C:\Users\Compag\Desktop\PP-2\endterm\task2\task2\obj\Debug\task2.csproj.GenerateResource.cache
+C:\Users\Compag\Desktop\PP-2\endterm\task2\task2\obj\Debug\task2.csproj.CoreCompileInputs.cache
+C:\Users\Compag\Desktop\PP-2\endterm\task2\task2\obj\Debug\task2.exe
+C:\Users\Compag\Desktop\PP-2\endterm\task2\task2\obj\Debug\task2.pdb

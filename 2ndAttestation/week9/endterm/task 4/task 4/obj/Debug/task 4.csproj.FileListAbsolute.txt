@@ -1,0 +1,10 @@
+C:\Users\Compag\Desktop\PP-2\endterm\task 4\task 4\bin\Debug\task 4.exe.config
+C:\Users\Compag\Desktop\PP-2\endterm\task 4\task 4\bin\Debug\task 4.exe
+C:\Users\Compag\Desktop\PP-2\endterm\task 4\task 4\bin\Debug\task 4.pdb
+C:\Users\Compag\Desktop\PP-2\endterm\task 4\task 4\obj\Debug\task 4.csprojResolveAssemblyReference.cache
+C:\Users\Compag\Desktop\PP-2\endterm\task 4\task 4\obj\Debug\task_4.Form1.resources
+C:\Users\Compag\Desktop\PP-2\endterm\task 4\task 4\obj\Debug\task_4.Properties.Resources.resources
+C:\Users\Compag\Desktop\PP-2\endterm\task 4\task 4\obj\Debug\task 4.csproj.GenerateResource.cache
+C:\Users\Compag\Desktop\PP-2\endterm\task 4\task 4\obj\Debug\task 4.csproj.CoreCompileInputs.cache
+C:\Users\Compag\Desktop\PP-2\endterm\task 4\task 4\obj\Debug\task 4.exe
+C:\Users\Compag\Desktop\PP-2\endterm\task 4\task 4\obj\Debug\task 4.pdb

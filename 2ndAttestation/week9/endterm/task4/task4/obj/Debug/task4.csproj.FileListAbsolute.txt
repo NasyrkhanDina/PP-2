@@ -1,0 +1,4 @@
+C:\Users\Compag\Desktop\PP-2\endterm\task4\task4\obj\Debug\task4.Form1.resources
+C:\Users\Compag\Desktop\PP-2\endterm\task4\task4\obj\Debug\task4.Properties.Resources.resources
+C:\Users\Compag\Desktop\PP-2\endterm\task4\task4\obj\Debug\task4.csproj.GenerateResource.cache
+C:\Users\Compag\Desktop\PP-2\endterm\task4\task4\obj\Debug\task4.csproj.CoreCompileInputs.cache

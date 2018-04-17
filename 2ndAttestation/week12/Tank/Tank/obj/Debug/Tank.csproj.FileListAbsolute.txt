@@ -1,0 +1,10 @@
+C:\Users\Compag\Desktop\PP-2\week12\Tank\Tank\obj\Debug\Tank.csprojResolveAssemblyReference.cache
+C:\Users\Compag\Desktop\PP-2\week12\Tank\Tank\obj\Debug\Tank.Form1.resources
+C:\Users\Compag\Desktop\PP-2\week12\Tank\Tank\obj\Debug\Tank.Properties.Resources.resources
+C:\Users\Compag\Desktop\PP-2\week12\Tank\Tank\obj\Debug\Tank.csproj.GenerateResource.cache
+C:\Users\Compag\Desktop\PP-2\week12\Tank\Tank\obj\Debug\Tank.csproj.CoreCompileInputs.cache
+C:\Users\Compag\Desktop\PP-2\week12\Tank\Tank\bin\Debug\Tank.exe.config
+C:\Users\Compag\Desktop\PP-2\week12\Tank\Tank\bin\Debug\Tank.exe
+C:\Users\Compag\Desktop\PP-2\week12\Tank\Tank\bin\Debug\Tank.pdb
+C:\Users\Compag\Desktop\PP-2\week12\Tank\Tank\obj\Debug\Tank.exe
+C:\Users\Compag\Desktop\PP-2\week12\Tank\Tank\obj\Debug\Tank.pdb

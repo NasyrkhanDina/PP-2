@@ -1,0 +1,10 @@
+C:\Users\Compag\Desktop\PP-2\endterm\CarGame\CarGame\bin\Debug\CarGame.exe.config
+C:\Users\Compag\Desktop\PP-2\endterm\CarGame\CarGame\bin\Debug\CarGame.exe
+C:\Users\Compag\Desktop\PP-2\endterm\CarGame\CarGame\bin\Debug\CarGame.pdb
+C:\Users\Compag\Desktop\PP-2\endterm\CarGame\CarGame\obj\Debug\CarGame.csprojResolveAssemblyReference.cache
+C:\Users\Compag\Desktop\PP-2\endterm\CarGame\CarGame\obj\Debug\CarGame.Form1.resources
+C:\Users\Compag\Desktop\PP-2\endterm\CarGame\CarGame\obj\Debug\CarGame.Properties.Resources.resources
+C:\Users\Compag\Desktop\PP-2\endterm\CarGame\CarGame\obj\Debug\CarGame.csproj.GenerateResource.cache
+C:\Users\Compag\Desktop\PP-2\endterm\CarGame\CarGame\obj\Debug\CarGame.csproj.CoreCompileInputs.cache
+C:\Users\Compag\Desktop\PP-2\endterm\CarGame\CarGame\obj\Debug\CarGame.exe
+C:\Users\Compag\Desktop\PP-2\endterm\CarGame\CarGame\obj\Debug\CarGame.pdb
